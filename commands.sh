@@ -14,6 +14,8 @@ sudo visudo -f /etc/sudoers.d/telmo
 
 telmo ALL=(ALL) NOPASSWD: /usr/sbin/service nginx start,/usr/sbin/service nginx stop,/usr/sbin/service nginx restart
 
+pm2 start npm --name mywebsite -- run start
+
 proxy_pass http://localhost:3000;
 proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
